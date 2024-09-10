@@ -1,3 +1,4 @@
+using investhub_backend.Data.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace investhub_backend.Controllers
