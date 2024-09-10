@@ -1,12 +1,10 @@
-version: '3.8'
-
 services:
     api:
         build:
             context: .
             dockerfile: Dockerfile
         ports:
-            - "5000:80"
+            - "8080:8080"
         environment:
             - ASPNETCORE_ENVIRONMENT=Development
             - ConnectionStrings__DefaultConnection=Host=db;Database=investhub;Username=admin;Password=investhub1234
