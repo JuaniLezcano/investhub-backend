@@ -10,7 +10,7 @@ namespace Data.Data
         public InvesthubDBContext(DbContextOptions<InvesthubDBContext> options) : base(options) { }
 
         //Aca irian las clases con sus get y set
-        //public virtual DbSet<Cliente> Cliente { get; set; }
+        public virtual DbSet<Cliente> Cliente { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseNpgsql("Host=db;Database=investhub;Username:admin;Password:investhub1234");
