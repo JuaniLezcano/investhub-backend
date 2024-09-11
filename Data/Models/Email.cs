@@ -12,9 +12,8 @@ namespace investhub_backend.Data.Models
     {
         [Key]
         public int Id { get; set; }
-
-        [Required]
-        [EmailAddress]
+        [Required] //Exije que el dato pedido sea obligatorio
+        [EmailAddress] //Valida que lo que se ingresa es una direccion de email
         public string Direccion { get; set; }
 
         // ClienteId es la clave foránea
