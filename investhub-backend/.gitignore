@@ -361,3 +361,14 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+/data/obj/Data.csproj.nuget.g.props
+/data/obj/Data.csproj.nuget.dgspec.json
+/data/obj/Data.csproj.nuget.cache
+/data/obj/Data.csproj.nuget.g.targets
+/data/obj/Data.project.assets.json
+/data/obj/Debug/net8.0/Data.AssemblyInfo.cs
+/data/obj/Debug/net8.0/Data.AssemblyInfoInputs.cache
+/data/obj/Debug/net8.0/Data.assets.cache
+/data/obj/Debug/net8.0/Data.csprojAssemblyReference.cache
+/data/obj/Debug/net8.0/Data.GeneratedMSBuildEditorConfig.editorconfig
