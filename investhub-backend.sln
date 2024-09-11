@@ -8,8 +8,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "investhub-backend", "invest
 		{75ADBF06-AA34-4CE9-A0A9-647D9438120D} = {75ADBF06-AA34-4CE9-A0A9-647D9438120D}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "..\Data\Data.csproj", "{75ADBF06-AA34-4CE9-A0A9-647D9438120D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
