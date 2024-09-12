@@ -8,6 +8,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace investhub_backend.Data.Models
 {
+    public enum Moneda
+    {
+        Pesos,
+        Dolares
+    }
     public class Ahorro
     {
         [Key] // Clave primaria
@@ -15,8 +20,9 @@ namespace investhub_backend.Data.Models
 
         public float Cantidad { get; set; } = 0;
 
-        public bool FlagUsd {  get; set; }
+        public Moneda tipoMoneda {  get; set; }
         [Required] // Exije que el dato pedido sea obligatorio
+        public int PortafolioId { get; set; } // Clave foranea a Portafolio
         public Portafolio Portafolio {  get; set; }
     }
 }

@@ -15,6 +15,7 @@ namespace investhub_backend.Data.Models
         [Required] // Exije que el dato pedido sea obligatorio
         [EmailAddress] //Valida que lo que se ingresa es una direccion de email
         public string Direccion { get; set; }
+        public int ClienteId { get; set; }
         public Cliente Cliente { get; set; }
     }
 }
