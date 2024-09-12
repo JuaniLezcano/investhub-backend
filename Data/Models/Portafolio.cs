@@ -12,7 +12,6 @@ namespace investhub_backend.Data.Models
     {
         [Key] // Clave primaria
         public int Id {  get; set; }
-        public int ClienteId { get; set; }
         public Cliente Cliente { get; set; }
         public List<Accion> Acciones { get; set; }
         public List<Ahorro> Ahorros { get; set; }
