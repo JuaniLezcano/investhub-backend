@@ -10,15 +10,12 @@ namespace investhub_backend.Data.Models
 {
     public class Cliente
     {
-        [Key]
+        [Key] // Clave primaria
         public int Id { get; set; }
-        [Required]
+        [Required] // Exije que el dato pedido sea obligatorio
         public string Usuario { get; set; }
-        [Required]
+        [Required] // Exije que el dato pedido sea obligatorio
         public string Password { get; set; }
-        // EmailId es la clave foránea
-        public int EmailId { get; set; }
-        [ForeignKey(nameof(EmailId))]
         public Email Email { get; set; }
 
     }

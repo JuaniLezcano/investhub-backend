@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Data.Models;
+using investhub_backend.Data.Models;
 
-namespace Data.Data
+namespace investhub_backend.DbContextInvesthub
 {
     public partial class InvesthubDBContext : DbContext
     {
@@ -9,8 +9,12 @@ namespace Data.Data
 
         public InvesthubDBContext(DbContextOptions<InvesthubDBContext> options) : base(options) { }
 
-        //Aca irian las clases con sus get y set
+        //Aca van los modelos con sus get y set
         public virtual DbSet<Cliente> Cliente { get; set; }
+        public virtual DbSet<Email> Email { get; set; }
+        public virtual DbSet<Ahorro> Ahorro { get; set; }
+        public virtual DbSet<Accion> Accion { get; set; }
+        public virtual DbSet<Portafolio> Portafolio { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseNpgsql("Host=db;Database=investhub;Username:admin;Password:investhub1234");

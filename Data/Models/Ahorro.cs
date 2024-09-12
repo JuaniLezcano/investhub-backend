@@ -8,13 +8,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace investhub_backend.Data.Models
 {
-    public class Portafolio
+    public class Ahorro
     {
         [Key] // Clave primaria
-        public int Id {  get; set; }
-        public int ClienteId { get; set; }
-        [ForeignKey(nameof(ClienteId))]
+        public int Id { get; set; }
+
+        public float Cantidad { get; set; } = 0;
+
+        public bool FlagUsd {  get; set; }
         [Required] // Exije que el dato pedido sea obligatorio
-        public Cliente Cliente { get; set; }
+        public Portafolio Portafolio {  get; set; }
     }
 }
