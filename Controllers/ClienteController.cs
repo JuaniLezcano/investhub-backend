@@ -12,11 +12,11 @@ namespace investhub_backend.Controllers
     public class ClienteController : ControllerBase
     {
 		private readonly ILogger<ClienteController> _logger;  //logger es el registro de mensajes
-		private readonly IClienteServicio _clienteServicio;
+		private readonly IClienteServicio _clienteServicio; //Instancia de la interfaz, nos permite acceder a los metodos que definimos en ella
 
 		public ClienteController(IClienteServicio clienteServicio, ILogger<ClienteController> logger)
 		{
-			_clienteServicio = clienteServicio;
+			_clienteServicio = clienteServicio; //Inicializa el servicio que maneja la logica de clientes ( a traves de el llamamos a los metodos definidos en la interfaz)
 			_logger = logger; //Inicializa el registro de eventos y errores 
         }
 

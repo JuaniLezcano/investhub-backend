@@ -5,17 +5,17 @@ using Microsoft.EntityFrameworkCore;
 
 namespace investhub_backend.Services
 {
-    public class ClienteServicio : IClienteServicio
+    public class ClienteServicio : IClienteServicio //La clase que implementa el servicio mediante la interfaz (que es donde estan definidos los metodos)
 	{
-        private InvesthubDBContext _dbContext;
+        private InvesthubDBContext _dbContext; //Instancia del contexto de la bd que maneja la interaccion con la base de datos
         public ClienteServicio()
         {
-            _dbContext = new InvesthubDBContext();
+            _dbContext = new InvesthubDBContext(); //Inicializamos la instancia de Investhub, esto permite acceder a la bd
         }
-        public async Task<RespuestaInterna<bool>> AgregarAsync(Cliente cliente)
+        public async Task<RespuestaInterna<bool>> AgregarAsync(Cliente cliente) //Instancia de la respuesta interna
         {
             var respuesta = new RespuestaInterna<bool>();
-            var clienteExiste = await _dbContext.Cliente.FirstOrDefaultAsync(c => c.Id == cliente.Id);
+            var clienteExiste = await _dbContext.Cliente.FirstOrDefaultAsync(c => c.Id == cliente.Id); //Aca primero busca por id si el cliente existe, si lo encuentra devuelve que ya existe
 			if (clienteExiste != null)
 			{
 				respuesta.Mensaje = "El cliente ya existe";
@@ -23,13 +23,13 @@ namespace investhub_backend.Services
 			}
 			try
 			{
-				await _dbContext.Cliente.AddAsync(cliente);
-				await _dbContext.SaveChangesAsync();
+				await _dbContext.Cliente.AddAsync(cliente); //Si no existe lo agregamos aca
+				await _dbContext.SaveChangesAsync(); //Persiste en la bd
 				respuesta.Exito = true;
 				respuesta.Datos = true;
 				return respuesta;
 			}
-			catch
+			catch //Si ocurre un error devuelve la respuesta sin exito
 			{
 				return respuesta;
 			}
@@ -37,10 +37,10 @@ namespace investhub_backend.Services
 
 		public async Task<RespuestaInterna<List<Cliente>>> ObtenerAsync()
 		{
-			var respuesta = new RespuestaInterna<List<Cliente>>();
+			var respuesta = new RespuestaInterna<List<Cliente>>(); 
 			try
 			{
-				var clientes = await _dbContext.Cliente.ToListAsync();
+				var clientes = await _dbContext.Cliente.ToListAsync(); //Utilizamos el metodo para convertir todos los clientes a una lista
 				respuesta.Datos = clientes;
 				respuesta.Exito = true;
 				return respuesta;
