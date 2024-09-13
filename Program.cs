@@ -1,4 +1,5 @@
 using investhub_backend.DbContextInvesthub;
+using investhub_backend.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,8 @@ builder.Services.AddDbContext<InvesthubDBContext>(options =>
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
     options.UseNpgsql(connectionString);
 });
+
+builder.Services.AddScoped<IClienteServicio, ClienteServicio>();
 
 var app = builder.Build();
 
