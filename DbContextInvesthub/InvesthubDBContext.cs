@@ -17,7 +17,7 @@ namespace investhub_backend.DbContextInvesthub
         public virtual DbSet<Portafolio> Portafolio { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseNpgsql("Host=db;Database=investhub;Username:admin;Password:investhub1234");
+        => optionsBuilder.UseNpgsql("Host=localhost;Database=investhub;Username=admin;Password=investhub1234");
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
