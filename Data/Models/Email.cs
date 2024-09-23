@@ -11,10 +11,13 @@ namespace investhub_backend.Data.Models
     public class Email
     {
         [Key] // Clave primaria
-        public int Id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int EmailId { get; set; }
         [Required] // Exije que el dato pedido sea obligatorio
         [EmailAddress] //Valida que lo que se ingresa es una direccion de email
         public string Direccion { get; set; }
-        public Cliente cliente { get; set; }
+        public int ClienteId { get; set; }
+        [ForeignKey("ClienteId")]
+        public virtual Cliente Cliente { get; set; }
     }
 }

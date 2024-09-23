@@ -15,7 +15,7 @@ namespace investhub_backend.Services
         public async Task<RespuestaInterna<bool>> AgregarAsync(Cliente cliente) //Instancia de la respuesta interna
         {
             var respuesta = new RespuestaInterna<bool>();
-            var clienteExiste = await _dbContext.Cliente.FirstOrDefaultAsync(c => c.Id == cliente.Id); //Aca primero busca por id si el cliente existe, si lo encuentra devuelve que ya existe
+            var clienteExiste = await _dbContext.Cliente.FirstOrDefaultAsync(c => c.ClienteId == cliente.ClienteId); //Aca primero busca por id si el cliente existe, si lo encuentra devuelve que ya existe
 			if (clienteExiste != null)
 			{
 				respuesta.Mensaje = "El cliente ya existe";

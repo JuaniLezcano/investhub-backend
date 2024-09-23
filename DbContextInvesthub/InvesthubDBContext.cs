@@ -13,7 +13,7 @@ namespace investhub_backend.DbContextInvesthub
         public virtual DbSet<Cliente> Cliente { get; set; }
         public virtual DbSet<Email> Email { get; set; }
         public virtual DbSet<Ahorro> Ahorro { get; set; }
-        public virtual DbSet<Accion> Accion { get; set; }
+        public virtual DbSet<Accion> Accione { get; set; }
         public virtual DbSet<Portafolio> Portafolio { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

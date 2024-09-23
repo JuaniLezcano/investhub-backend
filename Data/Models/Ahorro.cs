@@ -16,13 +16,14 @@ namespace investhub_backend.Data.Models
     public class Ahorro
     {
         [Key] // Clave primaria
-        public int Id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int AhorroId { get; set; }
 
         public float Cantidad { get; set; } = 0;
 
         public Moneda tipoMoneda {  get; set; }
-        [Required] // Exije que el dato pedido sea obligatorio
         public int PortafolioId { get; set; } // Clave foranea a Portafolio
-        public Portafolio Portafolio {  get; set; }
+        [ForeignKey("PortafolioId")]
+        public virtual Portafolio Portafolio {  get; set; }
     }
 }

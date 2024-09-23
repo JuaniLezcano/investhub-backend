@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "investhub-backend", "investhub-backend.csproj", "{925A6A96-4977-4ECB-B2E5-E5E4951F06EB}"
-	ProjectSection(ProjectDependencies) = postProject
-		{75ADBF06-AA34-4CE9-A0A9-647D9438120D} = {75ADBF06-AA34-4CE9-A0A9-647D9438120D}
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,10 +15,6 @@ Global
 		{925A6A96-4977-4ECB-B2E5-E5E4951F06EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{925A6A96-4977-4ECB-B2E5-E5E4951F06EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{925A6A96-4977-4ECB-B2E5-E5E4951F06EB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{75ADBF06-AA34-4CE9-A0A9-647D9438120D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{75ADBF06-AA34-4CE9-A0A9-647D9438120D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{75ADBF06-AA34-4CE9-A0A9-647D9438120D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{75ADBF06-AA34-4CE9-A0A9-647D9438120D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
