@@ -5,9 +5,7 @@ namespace investhub_backend.Services
 {
 	public interface IClienteServicio
 	{
-		Task<RespuestaInterna<bool>> AgregarAsync(Cliente cliente); //Recibimos un objeti de tipo cliente, si es correcto devuelve true en el dto sino false
-		Task<RespuestaInterna<List<Cliente>>> ObtenerAsync(); //Devolvemos una lista de clientes
+		Task<RespuestaInterna<bool>> AgregarAsync(ClienteDTO clientedto); //Recibimos un objeto de tipo clienteDTO, si es correcto devuelve true en el dto sino false
+		Task<RespuestaInterna<List<ClienteDTO>>> ObtenerAsync(); //Devolvemos una lista de clientes
 	}
 }
-
-//

@@ -22,9 +22,9 @@ namespace investhub_backend.Controllers
 
 		// Obtener todos los clientes
 		[HttpGet(Name = "GetClientes")]
-		public async Task<ActionResult<RespuestaExterna<List<Cliente>>>> Get()
+		public async Task<ActionResult<RespuestaExterna<List<ClienteDTO>>>> Get()
 		{
-			var respuesta = new RespuestaExterna<List<Cliente>>();
+			var respuesta = new RespuestaExterna<List<ClienteDTO>>();
 			try
 			{
 				var respuestaInterna = await _clienteServicio.ObtenerAsync();
@@ -37,7 +37,7 @@ namespace investhub_backend.Controllers
 				}
 				else
 				{
-					respuesta.MensajePublico = "Hubo un error al recuperar los clientes";
+					respuesta.MensajePublico = respuestaInterna.Mensaje;
 					return BadRequest(respuesta);
 				}
 			}
@@ -50,12 +50,12 @@ namespace investhub_backend.Controllers
 
 		// Agregar un nuevo cliente
 		[HttpPost(Name = "PostCliente")]
-		public async Task<ActionResult<RespuestaExterna<bool>>> Post(Cliente cliente)
+		public async Task<ActionResult<RespuestaExterna<bool>>> Post(ClienteDTO clientedto)
 		{
             var respuesta = new RespuestaExterna<bool>();
             try
             {
-                var respuestaInterna = await _clienteServicio.AgregarAsync(cliente);
+                var respuestaInterna = await _clienteServicio.AgregarAsync(clientedto);
                 if (respuestaInterna.Exito)
                 {
                     respuesta.Exito = true;
@@ -64,13 +64,13 @@ namespace investhub_backend.Controllers
                 }
                 else
                 {
-                    respuesta.MensajePublico = "Intente colocar otro CUIT.";
+                    respuesta.MensajePublico = "Hubo un error al cargar un cliente";
                     return BadRequest(respuesta);
                 }
             }
             catch (Exception ex)
             {
-                respuesta.MensajePublico = "Ocurrio un error al agregar al Cliente.";
+                respuesta.MensajePublico = ex.Message;
                 return StatusCode(StatusCodes.Status500InternalServerError, respuesta);
             }
         }
